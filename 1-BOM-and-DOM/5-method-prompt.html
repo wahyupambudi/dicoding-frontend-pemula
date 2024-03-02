@@ -1,0 +1,27 @@
+<!-- example with html -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Method Prompt</title>
+  </head>
+  <body>
+    <h1>Hello Prompt!</h1>
+    
+    
+    <script>
+    // documentation for prompt
+    // prompt(message?: DOMString, default?: DOMString)
+    // example with default value when input not found
+    let promptDefault = prompt("Hello Prompt", "I'am Default")
+    alert(promptDefault);
+    
+    // example with variable, input user and alert
+    let message = "Welcome "
+    let info = prompt("Whats u name");
+    alert(message + info);
+    // prompt check type data
+    alert("typeof promptDefault is: " + typeof promptDefault)
+    </script>
+  </body>
+</html>
