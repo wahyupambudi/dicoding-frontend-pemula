@@ -1,4 +1,4 @@
-# Peletakan JavaScript disarankan diatas </body>
+# Peletakan JavaScript disarankan diatas ```</body>```
 
 ## Kenapa?
 - karena jika javascript diletakan seperti meletakan CSS nanti tampilan tidak akan muncul sebelum javascript selesai di jalankan
