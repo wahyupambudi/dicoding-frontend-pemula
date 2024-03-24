@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Member BOM</title>
+</head>
+<body>
+  <script>
+    function alert(nama) {
+      console.log('Hati-hati, ' + nama);
+    }
+     
+    // 1. Output di bawah akan tercetak ke console browser
+    alert('Chewbacca'); // Output: Hati-hati, Chewbacca
+     
+    // 2. Output di bawah akan tetap tercetak pada console browser
+    // karena properti dan method yang dimiliki window bersifat global
+    window.alert('Chewbacca'); // Output: Hati-hati, Chewbacca
+  </script>
+</body>
+</html>
