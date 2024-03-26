@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create HTML Element</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div align="center">
+    <h2>Create HTML Element</h2>
+    <p>Create HTML Element With DOM</p>
+  </div>
+  <div>
+    <fieldset>
+        <legend>
+        <button onclick="createP()">Create P Element (click)</button>
+        </legend>
+        <pre style="text-align: left;">
+          function createP() {
+            const element = document.createElement('p');
+            console.log(element);
+            console.log(element.innerText = 'Ini adalah Paragraph');
+          }
+        </pre>
+          <p>view at console browser</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <button onclick="createImg()">Create Img Element (click)</button>
+        </legend>
+        <pre style="text-align: left;">
+          function createImg() {
+            const element = document.createElement('img');
+            console.log(element);
+            console.log(element.setAttribute('src', 'https://picsum.photos/200/300'))
+          }
+        </pre>
+          <p>view at console browser</p>
+      </fieldset>
+
+  </div>
+
+
+  <script>
+    function createP() {
+      const element = document.createElement('p');
+      console.log(element);
+      console.log(element.innerText = 'Ini adalah Paragraph');
+    }
+
+    function createImg() {
+      const element = document.createElement('img');
+      console.log(element);
+      console.log(element.setAttribute('src', 'https://picsum.photos/200/300'))
+    }
+  </script>
+</body>
+</html>
