@@ -1,100 +1,102 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manipulate Element</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="center">
-      <h1 id="heading-1">Manipulate Element With DOM</h1>
-      
-    </div>
-    <table>
-      <thead>
-        <tr>
-          <th>ELEMENT</th>
-          <th width="30%">MANIPULATE ELEMENT</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <fieldset>
-              <legend>example paragraph</legend>
-                <p id="nama">Wahyu Pambudi | Web Developer</p>
-                <p id="location">Lampung, Indonesia</p>
-            </fieldset>
-            <fieldset>
-              <legend>example button</legend>
-              <div id="btnAll">
-                <button name="btn">Button First</button><br>
-                <button name="btn-sec">Button Second</button><br>
-              </div>
-            </fieldset>
-            <fieldset>
-              <legend>example img</legend>
-              <img id="img" src="img.png" alt="certificate">
-            </fieldset>
-          </td>
-          <td style="vertical-align: top;">
-            <div>
-              <button onclick="styleProperty()">Update H1 Background</button><br>
-              <pre><strong>style.property</strong></pre>
-              <button onclick="useSetAttribute()">Update Width Image</button><br>
-              <pre><strong>SetAttribute(name, value)</strong></pre>
-              <button onclick="useInnerText()">Update Paraghraph</button><br>
-              <pre><strong>innerText = value</strong></pre>
-              <button onclick="useInnerHTML()">Manipulate Button</button><br>
-              <pre><strong>innerHTML = value</strong></pre>
-              <button onclick="useAppenChild()">Add Element</button><br>
-              <pre><strong>appendChild(value)</strong></pre>
-              <button onclick="useInsertBefore()">Add Element</button><br>
-              <pre><strong>insertBefore(param1, param2)</strong></pre>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulate Element</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="center">
+    <h1 id="heading-1">Manipulate Element With DOM</h1>
+
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>ELEMENT</th>
+        <th width="30%">MANIPULATE ELEMENT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <fieldset>
+            <legend>example paragraph</legend>
+            <p id="nama">Wahyu Pambudi | Web Developer</p>
+            <p id="location">Lampung, Indonesia</p>
+          </fieldset>
+          <fieldset>
+            <legend>example button</legend>
+            <div id="btnAll">
+              <button name="btn">Button First</button><br>
+              <button name="btn-sec">Button Second</button><br>
             </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          </fieldset>
+          <fieldset>
+            <legend>example img</legend>
+            <img id="img" src="img.png" alt="certificate">
+          </fieldset>
+        </td>
+        <td style="vertical-align: top;">
+          <div>
+            <button onclick="styleProperty()">Update H1 Background</button><br>
+            <pre><strong>style.property</strong></pre>
+            <button onclick="useSetAttribute()">Update Width Image</button><br>
+            <pre><strong>SetAttribute(name, value)</strong></pre>
+            <button onclick="useInnerText()">Update Paraghraph</button><br>
+            <pre><strong>innerText = value</strong></pre>
+            <button onclick="useInnerHTML()">Manipulate Button</button><br>
+            <pre><strong>innerHTML = value</strong></pre>
+            <button onclick="useAppenChild()">Add Element</button><br>
+            <pre><strong>appendChild(value)</strong></pre>
+            <button onclick="useInsertBefore()">Add Element</button><br>
+            <pre><strong>insertBefore(param1, param2)</strong></pre>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-    <script>
-      function styleProperty() {
-        const getH1 = document.getElementById("heading-1");
-        getH1.style.backgroundColor = 'red';
-      }
+  <script>
+    function styleProperty() {
+      const getH1 = document.getElementById("heading-1");
+      getH1.style.backgroundColor = 'red';
+    }
 
-      function useSetAttribute() {
-        const image = document.getElementById("img");
-        image.setAttribute('width', 400);
-      }
+    function useSetAttribute() {
+      const image = document.getElementById("img");
+      image.setAttribute('width', 400);
+    }
 
-      function useInnerText() {
-        const name = document.getElementById("nama");
-        name.innerText = "Wahyu Pambudi, S.Kom., M.Kom."
-        name.style.color = 'red';
-      }
+    function useInnerText() {
+      const name = document.getElementById("nama");
+      name.innerText = "Wahyu Pambudi, S.Kom., M.Kom."
+      name.style.color = 'red';
+    }
 
-      function useInnerHTML() {
-        const buttonFirst = document.getElementsByName("btn");
-        buttonFirst[0].innerHTML = "<b><i>Button First Special</i></b>"
-      }
+    function useInnerHTML() {
+      const buttonFirst = document.getElementsByName("btn");
+      buttonFirst[0].innerHTML = "<b><i>Button First Special</i></b>"
+    }
 
-      function useAppenChild() {
-        const newBtn = document.createElement("button");
-        newBtn.innerText = "Button Third!";
-        const getBtn = document.getElementById("btnAll");
-        getBtn.appendChild(newBtn);
-      }
+    function useAppenChild() {
+      const newBtn = document.createElement("button");
+      newBtn.innerText = "Button Third!";
+      const getBtn = document.getElementById("btnAll");
+      getBtn.appendChild(newBtn);
+    }
 
-      function useInsertBefore() {
-        const newBtn = document.createElement("button");
-        newBtn.innerText = "Button Sepuh!";
-        const getBtnFirst = document.getElementsByName("btn");
-        const getBtn = document.getElementById("btnAll");
-        getBtn.insertBefore(newBtn, getBtnFirst[0]);
-      }
+    function useInsertBefore() {
+      const newBtn = document.createElement("button");
+      newBtn.innerText = "Button Sepuh!";
+      const getBtnFirst = document.getElementsByName("btn");
+      const getBtn = document.getElementById("btnAll");
+      getBtn.insertBefore(newBtn, getBtnFirst[0]);
+    }
+  </script>
 
-    </script>
+</body>
 
-  </body>
 </html>
