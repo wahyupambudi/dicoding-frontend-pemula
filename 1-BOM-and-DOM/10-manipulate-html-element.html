@@ -41,6 +41,7 @@
         </td>
         <td style="vertical-align: top;">
           <div>
+            <button onclick="refreshPage()">Refresh</button><br>
             <button onclick="styleProperty()">Update H1 Background</button><br>
             <pre><strong>style.property</strong></pre>
             <button onclick="useSetAttribute()">Update Width Image</button><br>
@@ -60,6 +61,11 @@
   </table>
 
   <script>
+
+    function refreshPage() {
+      location.reload();
+    }
+
     function styleProperty() {
       const getH1 = document.getElementById("heading-1");
       getH1.style.backgroundColor = 'red';
