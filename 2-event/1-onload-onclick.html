@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event World</title>
+  
+  <style>
+    .contents {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid black;
+      padding: 15px;
+    }
+    
+    #generateButton {
+      margin-top: 5px;
+      margin-bottom: 15px;;
+    }
+  </style>
+</head>
+<body>
+<div class="contents" align="center" hidden>
+  <button id="incrementButton">Tekan Aku :)</button>
+  <h3>Kamu sudah menekan tombol di atas sebanyak <span id="count">0</span></h3>
+</div>
+ 
+<script>
+  // function for delete attribute hidden from div
+  function welcome() {
+    alert("Bismillahirrahmanirrahim, khadir!!");
+    const contents = document.querySelector(".contents");
+    contents.removeAttribute("hidden");
+  }
+
+  // create function increment
+  function increment() {
+    document.getElementById('count').innerText++;
+
+    // add element when count is 7
+    if(document.getElementById('count').innerText == 7) {
+      const hiddenMessage = document.createElement('h4');
+      hiddenMessage.innerText = 'congrats, you get something!';
+      const motivation = document.createElement('h3');
+      motivation.innerText = 'keep going bro!';
+      motivation.style.color = "red";
+
+      // add element to contents
+      const contents = document.querySelector(".contents");
+      contents.appendChild(hiddenMessage).appendChild(motivation);
+    }
+  }
+
+  // event onload
+  document.body.onload = welcome;
+
+  // implement to increment button
+  document.getElementById('incrementButton').onclick = increment;
+</script>
+</body>
+</html>
