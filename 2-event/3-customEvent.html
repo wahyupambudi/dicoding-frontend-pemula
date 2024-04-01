@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event World</title>
+    <style>
+    .buttons {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid black;
+        padding: 15px;
+    }
+
+    .button {
+        margin: 8px;
+        height: 40px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="buttons" align="center">
+        <h3 id="caption">please click button below...</h3>
+        <button class="button" id="tombol">button Custom Event</button>
+    </div>
+    <script>
+      const changeCaption = new Event('changeCaption');
+
+      // add event listner
+      window.addEventListener('load', function () {
+        const tombol = document.getElementById("tombol");
+        tombol.addEventListener('changeCaption', customEventHandler);
+        tombol.addEventListener('click', function() {
+          // call function dispatchEvent(event: Event)
+          tombol.dispatchEvent(changeCaption);
+        })
+      })
+
+      // declare customEventHandler
+      function customEventHandler (ev) {
+        console.log('Event ' + ev.type + ' is running');
+        const caption = document.getElementById('caption');
+        caption.innerText = 'you have generate custom event';
+      }
+    </script>
+</body>
+
+</html>
