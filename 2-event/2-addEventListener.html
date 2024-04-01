@@ -1,12 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Add Event Listener</title>
-	<link rel="stylesheet" href="">
+  <title>Event World</title>
+  
+  <style>
+    .contents {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid black;
+      padding: 15px;
+    }
+    
+    #generateButton {
+      margin-top: 5px;
+      margin-bottom: 15px;;
+    }
+  </style>
 </head>
 <body>
-	<h1>Hello World!</h1>
+<div class="contents" align="center" hidden>
+  <button id="incrementButton">Tekan Aku :)</button>
+  <h3>Kamu sudah menekan tombol di atas sebanyak <span id="count">0</span></h3>
+</div>
+ 
+<script>
+  // function for delete attribute hidden from div
+  function welcome() {
+    alert("Bismillahirrahmanirrahim, khadir!!");
+    const contents = document.querySelector(".contents");
+    contents.removeAttribute("hidden");
+  }
+
+  // create function increment
+  function increment() {
+    document.getElementById('count').innerText++;
+
+    const getIdCount = document.getElementById('count');
+
+    // add element when count is 7
+    if(getIdCount.innerText == 7) {
+      const hiddenMessage = document.createElement('h4');
+      hiddenMessage.innerText = 'congrats, you get something!';
+      const motivation = document.createElement('h3');
+      motivation.innerText = 'keep going bro!';
+      motivation.style.color = "red";
+      
+      // add element to contents
+      const contents = document.querySelector(".contents");
+      contents.appendChild(hiddenMessage).appendChild(motivation);
+    }
+  }
+
+  // add function prompt 
+  function addSpan () {
+    const getTotalCount = document.getElementById('count').innerText;
+    const contents = document.querySelector(".contents");
+    const addSpan = document.createElement('span');
+    addSpan.innerText = `${getTotalCount}, `;
+    contents.appendChild(addSpan);
+  }
+
+  // add event listener
+  // use addEventListener, dont need on when use onclick or onload, just clik or load
+  window.addEventListener('load', welcome);
+  document.getElementById('incrementButton').addEventListener('click', increment)
+  document.getElementById('incrementButton').addEventListener('click', addSpan)
+</script>
 </body>
 </html>
