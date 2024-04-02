@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Bubbling World</title>
+    <style>
+    body div {
+        width: 60%;
+        margin: 8px;
+        padding: 5px;
+        border: 2px solid black;
+    }
+    </style>
+</head>
+
+<!-- note -->
+<!-- Sesuai dengan penjelasan bubbling, jika kita menekan elemen paling dalam, maka semua event handler akan dijalankan dimulai dari elemen pertama yang di-klik lalu kemudian parent-nya dan seterusnya. -->
+<!-- Capturing merupakan kebalikan dari bubbling yang akan men-trigger event handler dari parent ke child. -->
+
+<body>
+    <fieldset>
+        <legend>Event Bubling</legend>
+        <div onclick="alert('ELEMEN LANGIT')" align="center">
+            LANGIT
+            <div onclick="alert('ELEMEN LUAR')" align="center">
+                LUAR
+                <div onclick="alert('ELEMEN TENGAH')" align="center">
+                    TENGAH
+                    <div onclick="alert('ELEMEN DALAM')" align="center">DALAM</div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Event Capturing</legend>
+        <div align="center" id="langit">
+            LANGIT
+            <div align="center" id="luar">
+                LUAR
+                <div align="center" id="tengah">
+                    TENGAH
+                    <div align="center" id="dalam">DALAM</div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <script>
+      const divs = document.getElementsByTagName('div');
+      for (let el of divs) {
+        el.addEventListener('click', function() {
+          alert('ELEMEN ' + el.getAttribute('id').toUpperCase())
+        }, true)
+      }
+    </script>
+</body>
+
+</html>
