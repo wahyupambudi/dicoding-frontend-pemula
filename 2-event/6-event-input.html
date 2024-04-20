@@ -71,7 +71,7 @@
     </div>
   </div>
   <script>
-    // event on input
+  // event on input
   document.addEventListener('DOMContentLoaded', function() {
     const inputMaxLengthOnLoad = document.getElementById('inputNama').maxLength;
     document.getElementById('sisaKarakter').innerText = inputMaxLengthOnLoad;
@@ -105,9 +105,45 @@
       console.log('InputNama: blur');
       document.getElementById('notifikasiSisaKarakter').style.visibility = 'hidden'
     })
+
+    // input on change
+    document.getElementById('inputCaptcha').addEventListener('change', function() {
+      console.log('inputChaptcha: change');
+      const inputCaptcha = document.getElementById('inputCaptcha').value;
+      const submitButtonStatus = document.getElementById('submitButton');
+
+      if (inputCaptcha === 'PRNU') {
+        submitButtonStatus.removeAttribute('disabled');
+      } else {
+        submitButtonStatus.setAttribute('disabled', '');
+      }
+    });
+
+    // captcha
+    document.getElementById('formDataDiri').addEventListener('submit', function(event) {
+      const inputCaptcha = document.getElementById('inputCaptcha').value;
+      console.log(inputCaptcha)
+
+      if (inputCaptcha === 'PRNU') {
+        alert('Selamat! Captcha Anda lolos :D');
+      } else {
+        alert('Captcha Anda belum tepat :(');
+        document.getElementById('submitButton').setAttribute('disabled', '');
+      }
+      event.preventDefault();
+    });
+
+    // input copy
+    document.getElementById('inputCopy').addEventListener('copy', function() {
+      alert('Anda telah men-copy sesuatu...');
+    });
+
+    // input copy
+    document.getElementById('inputPaste').addEventListener('paste', function() {
+      alert('Anda telah mem-paste sebuah teks...');
+    });
+
   });
-
-
   </script>
 </body>
 
